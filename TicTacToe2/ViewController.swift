@@ -52,9 +52,11 @@ class ViewController: UIViewController {
                 if gameState[combinantion[0]] == 1 {
                     winnerLabel.isHidden = false
                     winnerLabel.text = "Congrats Red Won"
+                    winnerLabel.textColor = .red
                 } else if gameState[combinantion[0]] == 2{
                     winnerLabel.isHidden = false
                     winnerLabel.text = "Congrats Blue Won"
+                    winnerLabel.textColor = .blue
                 }
               
             }
@@ -62,12 +64,14 @@ class ViewController: UIViewController {
         if !gameState.contains(0){
            winnerLabel.isHidden = false
            winnerLabel.text = "The game has ended with a tie"
+            winnerLabel.textColor = .green
        }
     }
 
 
 @IBAction func resetButton(_ sender: Any) {
     winnerLabel.text = "Red's Turn"
+    winnerLabel.textColor = .black
     gameIsActive = true
     activePlayer = 1
     gameState = [ 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0]
